@@ -104,7 +104,7 @@ do
               ;;
               8)
                 cd $pwd/nito
-                docker-compose down
+                docker-compose -f local.yml down
                 choice="exit"
                 sleep 2
               ;;
@@ -222,7 +222,7 @@ do
               ;;
               8)
                 cd $pwd/nito
-                docker-compose build
+                docker-compose -f local.yml build
                 choice="exit"
                 sleep 2
               ;;
@@ -240,6 +240,8 @@ do
               ;;
               11)
                 cd $pwd/drakkar
+                npm run-script build
+                sleep 30
                 docker-compose build
                 choice="exit"
                 sleep 2
@@ -340,7 +342,7 @@ do
               ;;
               8)
                 cd $pwd/nito
-                docker-compose up
+                docker-compose -f local.yml up
                 choice="exit"
                 sleep 2
               ;;
