@@ -28,6 +28,7 @@ do
         while [ $choice = "down" ]
         do
           clear
+
           echo "//********* appsafe ************\\"
           echo "*         MENU - DOWN            *"
           echo "*                                *"
@@ -51,85 +52,114 @@ do
           echo "*                                *"
           echo "*  10- Compose down Newton       *"
           echo "*                                *"
-          echo "*  11- Compose down Drakkar      *"
+          echo "*  11- Compose down Robin        *"
           echo "*                                *"
-          echo "*  12- Compose down STF          *"
+          echo "*  12- Compose down Drakkar      *"
+          echo "*                                *"
+          echo "*  13- Compose down STF          *"
+          echo "*                                *"
+          echo "*  back- Back to main menu       *"
           echo "*                                *"
           echo "*  exit- To quit                 *"
           echo "*                                *"
           echo "\\********* appsafe ************//"
           read answerMenuDown
             
+            clear
+          
             case "$answerMenuDown" in
               1)
                 ./stop.sh
-                choice="exit"
+                choice="main"
                 sleep 2
               ;;
               2)
-                cd $pwd/databases
+                cd "${pwd}/databases"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               3)
-                cd $pwd/beholder
+                cd "${pwd}/beholder"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               4)
-                cd $pwd/chronograf
+                cd "${pwd}/chronograf"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               5)
-                cd $pwd/havel
+                cd "${pwd}/havel"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               6)
-                cd $pwd/alf
+                cd "${pwd}/alf"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               7)
-                cd $pwd/hoover
+                cd "${pwd}/hoover"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               8)
-                cd $pwd/nito
+                cd "${pwd}/nito"
                 docker-compose -f local.yml down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               9)
-                cd $pwd/cortex
+                cd "${pwd}/cortex"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               10)
-                cd $pwd/newton
+                cd "${pwd}/newton"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               11)
-                cd $pwd/drakkar
+                cd "${pwd}/robin"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
                 sleep 2
               ;;
               12)
-                cd $pwd/stf-berghem
+                cd "${pwd}/drakkar"
                 docker-compose down
-                choice="exit"
+                choice="down"
+                cd ..
+                sleep 2
+              ;;
+              13)
+                cd "${pwd}/stf-berghem"
+                docker-compose down
+                choice="down"
+                cd ..
+                sleep 2
+              ;;
+              back)
+                choice="main"
+                echo "Back to main menu..."
                 sleep 2
               ;;
               exit)
@@ -146,6 +176,7 @@ do
         while [ $choice = "build" ]
         do
           clear
+
           echo "//********* appsafe ************\\"
           echo "*         MENU - BUILD           *"
           echo "*                                *"
@@ -169,87 +200,116 @@ do
           echo "*                                *"
           echo "*  10- Compose build Newton      *"
           echo "*                                *"
-          echo "*  11- Compose build Drakkar     *"
+          echo "*  11- Compose build Robin       *"
           echo "*                                *"
-          echo "*  12- Compose build STF         *"
+          echo "*  12- Compose build Drakkar     *"
+          echo "*                                *"
+          echo "*  13- Compose build STF         *"
+          echo "*                                *"
+          echo "*  back- Back to main menu       *"
           echo "*                                *"
           echo "*  exit- To quit                 *"
           echo "*                                *"
           echo "\\********* appsafe ************//"
           read answerMenuBuild
 
+            clear
+
             case "$answerMenuBuild" in
               1)
                 ./buildServices.sh
-                choice="exit"
+                choice="main"
                 sleep 2
               ;;
               2)
-                cd $pwd/databases
+                cd "${pwd}/databases"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               3)
-                cd $pwd/beholder
+                cd "${pwd}/beholder"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               4)
-                cd $pwd/chronograf
+                cd "${pwd}/chronograf"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               5)
-                cd $pwd/havel
+                cd "${pwd}/havel"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               6)
-                cd $pwd/alf
+                cd "${pwd}/alf"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               7)
-                cd $pwd/hoover
+                cd "${pwd}/hoover"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               8)
-                cd $pwd/nito
+                cd "${pwd}/nito"
                 docker-compose -f local.yml build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               9)
-                cd $pwd/cortex
+                cd "${pwd}/cortex"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               10)
-                cd $pwd/newton
+                cd "${pwd}/newton"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               11)
-                cd $pwd/drakkar
-                npm run-script build
-                sleep 30
+                cd "${pwd}/robin"
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
                 sleep 2
               ;;
               12)
-                cd $pwd/stf-berghem
+                cd "${pwd}/drakkar"
+                npm run-script build
+                sleep 30
                 docker-compose build
-                choice="exit"
+                choice="build"
+                cd ..
+                sleep 2
+              ;;
+              13)
+                cd "${pwd}/stf-berghem"
+                docker-compose build
+                choice="build"
+                cd ..
+                sleep 2
+              ;;
+              back)
+                choice="main"
+                echo "Back to main menu..."
                 sleep 2
               ;;
               exit)
@@ -266,6 +326,7 @@ do
         while [ $choice = "up" ]
         do
           clear
+
           echo "//********* appsafe ************\\"
           echo "*         MENU - UP              *"
           echo "*                                *"
@@ -289,14 +350,20 @@ do
           echo "*                                *"
           echo "*  10- Compose up Newton         *"
           echo "*                                *"
-          echo "*  11- Compose up Drakkar        *"
+          echo "*  11- Compose up Robin          *"
           echo "*                                *"
-          echo "*  12- Compose up STF            *"
+          echo "*  12- Compose up Drakkar        *"
+          echo "*                                *"
+          echo "*  13- Compose up STF            *"
+          echo "*                                *"
+          echo "*  back- Back to main menu       *"
           echo "*                                *"
           echo "*  exit- To quit                 *"
           echo "*                                *"
           echo "\\********* appsafe ************//"
           read answerMenuUp
+
+            clear
 
             case "$answerMenuUp" in
               1)
@@ -305,69 +372,92 @@ do
                 sleep 2
               ;;
               2)
-                cd $pwd/databases
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/databases"
+                gnome-terminal --title="Databases" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               3)
-                cd $pwd/beholder
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/beholder"
+                gnome-terminal --title="Beholder" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               4)
-                cd $pwd/chronograf
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/chronograf"
+                gnome-terminal --title="Chronograf" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               5)
-                cd $pwd/havel
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/havel"
+                gnome-terminal --title="Havel" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               6)
-                cd $pwd/alf
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/alf"
+                gnome-terminal --title="Alf" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               7)
-                cd $pwd/hoover
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/hoover"
+                gnome-terminal --title="Hoover" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               8)
-                cd $pwd/nito
-                docker-compose -f local.yml up
-                choice="exit"
+                cd "${pwd}/nito"
+                gnome-terminal --title="Nito" -- docker-compose -f local.yml up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               9)
-                cd $pwd/cortex
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/cortex"
+                gnome-terminal --title="Cortex" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               10)
-                cd $pwd/newton
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/newton"
+                gnome-terminal --title="Newton" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               11)
-                cd $pwd/drakkar
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/robin"
+                gnome-terminal --title="Robin" -- docker-compose up
+                choice="up"
+                cd ..
                 sleep 2
               ;;
               12)
-                cd $pwd/stf-berghem
-                docker-compose up
-                choice="exit"
+                cd "${pwd}/drakkar"
+                gnome-terminal --title="Drakkar" -- docker-compose up
+                choice="up"
+                cd ..
+                sleep 2
+              ;;
+              13)
+                cd "${pwd}/stf-berghem"
+                gnome-terminal --title="STF" -- docker-compose up
+                choice="up"
+                cd ..
+                sleep 2
+              ;;
+              back)
+                choice="main"
+                echo "Back to main menu..."
                 sleep 2
               ;;
               exit)
@@ -379,12 +469,15 @@ do
         done
       ;;
       exit)
+        clear
+
         choice="exit"
         echo "Exiting..."
         sleep 3
       ;;
       *)
         clear
+
         echo "Thats is not an option"
         sleep 3
       ;;
